@@ -877,15 +877,15 @@ BEGIN
    необходимо создать отдельную таблицук тиров и наполнить ее данніми по услувию FRAUD_TIER = 'PRS_RATE'
    если исходящий вызов будет на один из указанных в таблице тиров с одного номера более 2 соединений - добавлять в отчет
    */
-   EXECUTE IMMEDIATE 'truncate table ALEX.R0108_PRS_TIER';
-
-   INSERT INTO ALEX.R0108_PRS_TIER (FK_TIER, FRAUD_TIER, BIL_OP)
-        SELECT FK_TIER, FRAUD_TIER, FK_ORGA_OPER
-          FROM ALEX.R0108_RATE_SYS
-         WHERE FRAUD_TIER IN ('PRS_RATE', 'PRS_TYPE')
-      GROUP BY FK_TIER, FRAUD_TIER, FK_ORGA_OPER;
-
-   COMMIT;
+--   EXECUTE IMMEDIATE 'truncate table ALEX.R0108_PRS_TIER';
+--
+--   INSERT INTO ALEX.R0108_PRS_TIER (FK_TIER, FRAUD_TIER, BIL_OP)
+--        SELECT FK_TIER, FRAUD_TIER, FK_ORGA_OPER
+--          FROM ALEX.R0108_RATE_SYS
+--         WHERE FRAUD_TIER IN ('PRS_RATE', 'PRS_TYPE')
+--      GROUP BY FK_TIER, FRAUD_TIER, FK_ORGA_OPER;
+--
+--   COMMIT;
 
 
 
